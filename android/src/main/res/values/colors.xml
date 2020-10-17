@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="color_orange">#FF761B</color>
+    <color name="gray_text">#ADADAD</color>
+
+    <color name="gray_333">#333333</color>
+    <color name="gray_666">#666666</color>
+    <color name="gray_999">#999999</color>
+
+    <!--视频回放-->
+    <color name="timeruler_showtime_bg_color">#000000</color>
+    <color name="timeruler_showtime_text_color">#E6FFFFFF</color>
+</resources>

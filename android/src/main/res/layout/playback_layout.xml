@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <ImageView
+        android:id="@+id/close_playback"
+        android:src="@drawable/ic_close"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <RadioGroup
+        android:id="@+id/groupbox"
+        android:layout_width="150dp"
+        android:layout_height="27dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="17dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.baianju.live_plugin.widget.MyRadioButton
+            android:id="@+id/local_back"
+            style="@style/back_play_bg"
+            android:background="@drawable/video_yuan_left_select"
+            android:checked="true"
+            android:text="本地" />
+
+        <com.baianju.live_plugin.widget.MyRadioButton
+            android:id="@+id/cloud_back"
+            style="@style/back_play_bg"
+            android:background="@drawable/video_yuan_right_select"
+            android:text="云端" />
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/timeLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp">
+
+        <com.baianju.live_plugin.widget.timeRulerView.TimeRulerView
+            android:id="@+id/timeRulerView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/timerulerview_height"
+            app:bottomLineColor="#D7D7D7"
+            app:bottomLineStrokeWidth="1dp"
+            app:contentHeight="@dimen/timerulerview_contentheight"
+            app:middleLineColor="#50AC37"
+            app:scaleColor="#D7D7D7"
+            app:scaleLineStrokeWidth="1dp"
+            app:selectBackgroundColor="#E2FCD9"
+            app:showtimeHeight="@dimen/timerulerview_showtimeheight"
+            app:textColors="#626262"
+            app:textFontSize="10sp"
+            app:topLineColor="#D7D7D7"
+            app:topLineStrokeWidth="1dp"
+            app:widthPerScale="35dp" /><!--app:totalTimePerCell="halfHour"-->
+
+        <FrameLayout
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginRight="14dp"
+            android:layout_marginBottom="7dp">
+
+            <ImageView
+                android:id="@+id/iv_showpick"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center|end"
+                android:src="@drawable/timerulerview_button" />
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timeLine"
+        android:layout_marginTop="12dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/before_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="38dp"
+            android:rotation="180"
+            android:src="@drawable/ic_gray_48_back" />
+
+        <TextView
+            android:id="@+id/calendar_year_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#FF313131"
+            android:textSize="16sp"
+            tool:text="2016年8月" />
+
+        <ImageView
+            android:id="@+id/next_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="38dp"
+            android:src="@drawable/ic_gray_48_back" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time"
+        android:background="#ffff">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CalendarView
+                android:id="@+id/system_calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:selectedWeekBackgroundColor="#FF761B"
+                android:focusedMonthDateColor="#FF761B"
+                android:weekSeparatorLineColor="#FF761B"
+                android:unfocusedMonthDateColor="#FF761B"
+                android:dateTextAppearance="@style/calendar_view" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <View
+        android:id="@+id/view_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/fl_timerulerpick"
+        android:layout_width="24dp"
+        android:layout_height="144dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="14dp"
+        android:visibility="visible">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/timerulerpick_bg" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/timerulerview_plus" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="bottom"
+            android:src="@drawable/timerulerview_minus" />
+
+        <com.baianju.live_plugin.widget.timeRulerView.TimeRulerPickView
+            android:id="@+id/timeRulerPickView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+</RelativeLayout>

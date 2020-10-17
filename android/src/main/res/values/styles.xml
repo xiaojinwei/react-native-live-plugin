@@ -1,0 +1,47 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>-->
+
+    <!-- 控制pop出现动画 -->
+    <style name="popwindowUpAnim">
+        <item name="android:windowEnterAnimation">@anim/fade_up</item>
+        <item name="android:windowExitAnimation">@anim/fade_down</item>
+    </style>
+
+    <style name="popwindowAppearAnim">
+        <item name="android:windowEnterAnimation">@anim/fade_appear</item>
+        <item name="android:windowExitAnimation">@anim/fade_disappear</item>
+    </style>
+
+    <style name="calendar_view">
+        <item name="android:textColor">#000</item>
+        <item name="android:textColorHighlight">#FF761B</item>
+    </style>
+
+    <style name="back_play_bg" parent="android:Widget.CompoundButton.RadioButton">
+        <item name="android:textColor">@color/back_play_text</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--Dialog-->
+    <style name="app_dialog_theme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>-->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>-->
+    </style>
+</resources>
